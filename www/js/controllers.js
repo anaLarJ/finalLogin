@@ -108,7 +108,7 @@ angular.module('starter.controllers', [])
 
   $scope.confirmDelete = function(idNote) {
     var confirmPopup = $ionicPopup.confirm({
-      title: 'Delate the post',
+      title: 'Delete the post',
       template: 'Are you sure ?'
     })
 
