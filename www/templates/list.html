@@ -1,0 +1,21 @@
+<ion-view view-title="I Don't Drug">
+  <ion-content >
+    <a href="#/form/" class="button button-full button-stable button-outline" style="height :50px; margin:10px;">       
+       How do you feel today ?
+       <i class="icon ion-plus-circled"  ></i>   
+    </a>
+    
+   
+    <div class="card" ng-repeat="item in itemsList">
+      <div class="item item-divider" ng-click="gotoEdit(item.id)">
+        {{item.title}}
+      </div>
+      <div class="item item-text-wrap">
+        {{item.content}}
+      </div>
+    </div>
+ 
+    
+  </ion-content>
+</ion-view>
+
