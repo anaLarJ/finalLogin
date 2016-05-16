@@ -1,4 +1,7 @@
 angular.module('starter.services', ['ngCordova'])
+
+  
+
   .factory('NotesDataService', function ($cordovaSQLite, $ionicPlatform) {
     var db, dbName = "noteDemo.db"
  
@@ -67,3 +70,33 @@ angular.module('starter.services', ['ngCordova'])
       }
     }
   })
+  
+  
+  /************************* */
+
+  .service('LoginService', function($q) {
+    return {
+        loginUser: function(name, pw) {
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+ 
+            if ((name == 'Ana' && pw == 'secretAna') ||  (name == 'Lea' && pw == 'secretLea') || (name == 'Gustavo' && pw == 'secretGustavo') ) {
+                deferred.resolve('Welcome ' + name + '!');
+            } else {
+                deferred.reject('Wrong credentials.');
+            }
+            promise.success = function(fn) {
+                promise.then(fn);
+                return promise;
+            }
+            promise.error = function(fn) {
+                promise.then(null, fn);
+                return promise;
+            }
+            return promise;
+        }
+    }
+  });
+
+
+  /************************** */
